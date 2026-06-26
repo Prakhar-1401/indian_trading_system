@@ -1,0 +1,256 @@
+{
+  "summary": {
+    "generated_at": "2026-06-22T18:40:30",
+    "backtest": {
+      "runs": 6,
+      "avg_cagr_pct": 10.815,
+      "avg_sharpe": 1.085,
+      "avg_max_drawdown_pct": -10.343,
+      "best_run": {
+        "universe": "B",
+        "start": "2022-01-01",
+        "end": "2024-01-01",
+        "total_return_pct": 43.22,
+        "cagr_pct": 19.84,
+        "sharpe_ratio": 1.94,
+        "max_drawdown_pct": -10.49,
+        "win_rate_pct": 41.2,
+        "profit_factor": 0.77,
+        "total_trades": 34
+      },
+      "worst_run": {
+        "universe": "A",
+        "start": "2024-06-01",
+        "end": "2026-06-01",
+        "total_return_pct": 1.15,
+        "cagr_pct": 0.58,
+        "sharpe_ratio": 0.11,
+        "max_drawdown_pct": -12.59,
+        "win_rate_pct": 32.6,
+        "profit_factor": 0.98,
+        "total_trades": 46
+      }
+    },
+    "wfo": {
+      "runs": 5,
+      "avg_total_oos_return": -7.404,
+      "avg_degradation": 106.1
+    },
+    "ml": {
+      "symbols": 10,
+      "avg_rf_accuracy": 63.234,
+      "avg_gb_accuracy": 66.667,
+      "sell_count": 7,
+      "buy_count": 0,
+      "hold_count": 3
+    }
+  },
+  "backtest_rows": [
+    {
+      "universe": "A",
+      "start": "2022-01-01",
+      "end": "2024-01-01",
+      "total_return_pct": 25.5,
+      "cagr_pct": 12.12,
+      "sharpe_ratio": 1.13,
+      "max_drawdown_pct": -11.44,
+      "win_rate_pct": 37.8,
+      "profit_factor": 1.29,
+      "total_trades": 45
+    },
+    {
+      "universe": "A",
+      "start": "2023-01-01",
+      "end": "2025-01-01",
+      "total_return_pct": 26.83,
+      "cagr_pct": 12.65,
+      "sharpe_ratio": 1.32,
+      "max_drawdown_pct": -7.04,
+      "win_rate_pct": 46.7,
+      "profit_factor": 3.05,
+      "total_trades": 30
+    },
+    {
+      "universe": "A",
+      "start": "2024-06-01",
+      "end": "2026-06-01",
+      "total_return_pct": 1.15,
+      "cagr_pct": 0.58,
+      "sharpe_ratio": 0.11,
+      "max_drawdown_pct": -12.59,
+      "win_rate_pct": 32.6,
+      "profit_factor": 0.98,
+      "total_trades": 46
+    },
+    {
+      "universe": "B",
+      "start": "2022-01-01",
+      "end": "2024-01-01",
+      "total_return_pct": 43.22,
+      "cagr_pct": 19.84,
+      "sharpe_ratio": 1.94,
+      "max_drawdown_pct": -10.49,
+      "win_rate_pct": 41.2,
+      "profit_factor": 0.77,
+      "total_trades": 34
+    },
+    {
+      "universe": "B",
+      "start": "2023-01-01",
+      "end": "2025-01-01",
+      "total_return_pct": 39.17,
+      "cagr_pct": 18.01,
+      "sharpe_ratio": 1.79,
+      "max_drawdown_pct": -8.9,
+      "win_rate_pct": 60.0,
+      "profit_factor": 5.11,
+      "total_trades": 30
+    },
+    {
+      "universe": "B",
+      "start": "2024-06-01",
+      "end": "2026-06-01",
+      "total_return_pct": 3.39,
+      "cagr_pct": 1.69,
+      "sharpe_ratio": 0.22,
+      "max_drawdown_pct": -11.6,
+      "win_rate_pct": 35.6,
+      "profit_factor": 0.49,
+      "total_trades": 45
+    }
+  ],
+  "wfo_rows": [
+    {
+      "symbol": "RELIANCE",
+      "windows": 15,
+      "avg_oos_return": -0.2,
+      "total_oos_return": -3.04,
+      "avg_win_rate": 0.267,
+      "degradation": 101.1
+    },
+    {
+      "symbol": "TCS",
+      "windows": 15,
+      "avg_oos_return": -0.08,
+      "total_oos_return": -1.14,
+      "avg_win_rate": 0.38,
+      "degradation": 100.6
+    },
+    {
+      "symbol": "HDFCBANK",
+      "windows": 15,
+      "avg_oos_return": -0.44,
+      "total_oos_return": -6.56,
+      "avg_win_rate": 0.283,
+      "degradation": 103.4
+    },
+    {
+      "symbol": "INFY",
+      "windows": 15,
+      "avg_oos_return": -1.17,
+      "total_oos_return": -17.48,
+      "avg_win_rate": 0.289,
+      "degradation": 122.3
+    },
+    {
+      "symbol": "SBIN",
+      "windows": 15,
+      "avg_oos_return": -0.59,
+      "total_oos_return": -8.8,
+      "avg_win_rate": 0.25,
+      "degradation": 103.1
+    }
+  ],
+  "ml_rows": [
+    {
+      "symbol": "TCS",
+      "action": "HOLD",
+      "confidence": 0.614,
+      "agreement": "AGREE",
+      "rf_accuracy": 51.52,
+      "gb_accuracy": 62.12,
+      "train_samples": 789
+    },
+    {
+      "symbol": "SBIN",
+      "action": "HOLD",
+      "confidence": 0.448,
+      "agreement": "STRONG_AGREE",
+      "rf_accuracy": 62.12,
+      "gb_accuracy": 64.14,
+      "train_samples": 789
+    },
+    {
+      "symbol": "INFY",
+      "action": "HOLD",
+      "confidence": 0.363,
+      "agreement": "AGREE",
+      "rf_accuracy": 64.14,
+      "gb_accuracy": 66.67,
+      "train_samples": 789
+    },
+    {
+      "symbol": "COALINDIA",
+      "action": "SELL",
+      "confidence": 0.315,
+      "agreement": "DISAGREE",
+      "rf_accuracy": 60.61,
+      "gb_accuracy": 57.58,
+      "train_samples": 789
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "action": "SELL",
+      "confidence": 0.283,
+      "agreement": "STRONG_AGREE",
+      "rf_accuracy": 62.63,
+      "gb_accuracy": 69.19,
+      "train_samples": 789
+    },
+    {
+      "symbol": "NTPC",
+      "action": "SELL",
+      "confidence": 0.269,
+      "agreement": "AGREE",
+      "rf_accuracy": 69.7,
+      "gb_accuracy": 75.76,
+      "train_samples": 789
+    },
+    {
+      "symbol": "SUNPHARMA",
+      "action": "SELL",
+      "confidence": 0.248,
+      "agreement": "DISAGREE",
+      "rf_accuracy": 68.18,
+      "gb_accuracy": 65.15,
+      "train_samples": 789
+    },
+    {
+      "symbol": "BHARTIARTL",
+      "action": "SELL",
+      "confidence": 0.236,
+      "agreement": "DISAGREE",
+      "rf_accuracy": 67.17,
+      "gb_accuracy": 61.11,
+      "train_samples": 789
+    },
+    {
+      "symbol": "HDFCBANK",
+      "action": "SELL",
+      "confidence": 0.22,
+      "agreement": "DISAGREE",
+      "rf_accuracy": 64.65,
+      "gb_accuracy": 73.74,
+      "train_samples": 789
+    },
+    {
+      "symbol": "RELIANCE",
+      "action": "SELL",
+      "confidence": 0.194,
+      "agreement": "DISAGREE",
+      "rf_accuracy": 61.62,
+      "gb_accuracy": 71.21,
+      "train_samples": 789
+    }
+  ]
+}

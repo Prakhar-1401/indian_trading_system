@@ -1,0 +1,6 @@
+symbol,windows,avg_oos_return,total_oos_return,avg_win_rate,degradation
+RELIANCE,15,-0.2,-3.04,0.267,101.1
+TCS,15,-0.08,-1.14,0.38,100.6
+HDFCBANK,15,-0.44,-6.56,0.283,103.4
+INFY,15,-1.17,-17.48,0.289,122.3
+SBIN,15,-0.59,-8.8,0.25,103.1
