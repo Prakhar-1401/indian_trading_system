@@ -1,0 +1,58 @@
+2026-06-22 18:47:26.962 | DEBUG    | src.data.fetcher:get_historical_data:159 - Loading cached data for RELIANCE.NS
+2026-06-22 18:47:26.997 | DEBUG    | src.data.fetcher:get_historical_data:159 - Loading cached data for TCS.NS
+2026-06-22 18:47:27.020 | DEBUG    | src.data.fetcher:get_historical_data:159 - Loading cached data for HDFCBANK.NS
+2026-06-22 18:47:27.043 | DEBUG    | src.data.fetcher:get_historical_data:159 - Loading cached data for SBIN.NS
+2026-06-22 18:47:27.065 | DEBUG    | src.data.fetcher:get_historical_data:159 - Loading cached data for BHARTIARTL.NS
+2026-06-22 18:47:27.088 | DEBUG    | src.data.fetcher:get_historical_data:159 - Loading cached data for SUNPHARMA.NS
+2026-06-22 18:47:27.113 | DEBUG    | src.data.fetcher:get_historical_data:159 - Loading cached data for COALINDIA.NS
+2026-06-22 18:47:27.133 | DEBUG    | src.data.fetcher:get_historical_data:159 - Loading cached data for NTPC.NS
+2026-06-22 18:47:27.160 | DEBUG    | src.data.fetcher:get_historical_data:159 - Loading cached data for BAJFINANCE.NS
+2026-06-22 18:47:27.186 | INFO     | src.data.fetcher:get_historical_data:163 - Downloading data for ITC.NS (5y, 1d)
+
+  Running 10,000 Monte Carlo simulations (1-year horizon)...
+
+======================================================================
+  ≡ƒÄ▓ MONTE CARLO SIMULATION ΓÇö 10-STOCK PORTFOLIO
+======================================================================
+  Simulations: 10,000
+  Time Horizon: 252 trading days (~1y 0m)
+  Initial Capital: Γé╣1,000,000
+
+  ≡ƒôè RETURN DISTRIBUTION
+  ----------------------------------------
+    Mean Return:    +17.46%
+    Median Return:  +16.45%
+    Std Deviation:  16.45%
+    Best Case (95): +45.84%
+    Worst Case (5): -8.01%
+
+  ≡ƒÄ» PROBABILITY ANALYSIS
+  ----------------------------------------
+    P(Profit > 0%):   85.9%
+    P(Return > 15%):  53.5%
+    P(Ruin > -30%):   0.1%
+
+  ΓÜá∩╕Å RISK METRICS
+  ----------------------------------------
+    VaR (95%):        -8.01% (you won't lose more than this 95% of time)
+    CVaR (95%):       -12.90% (if things go bad, expect this loss)
+    Max DD (median):  -10.1%
+    Max DD (worst):   -19.0%
+
+  ≡ƒôê RETURN PERCENTILES
+  ----------------------------------------
+    P 5 [ΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûæΓûæΓûæΓûæΓûæΓûæΓûæΓûæΓûæΓûæΓûæΓûæΓûæΓûæΓûæΓûæΓûæΓûæ] -8.0%
+    P10 [ΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûæΓûæΓûæΓûæΓûæΓûæΓûæΓûæΓûæΓûæΓûæΓûæΓûæΓûæΓûæΓûæ] -2.7%
+    P25 [ΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûæΓûæΓûæΓûæΓûæΓûæΓûæΓûæΓûæΓûæΓûæΓûæΓûæΓûæ] +6.0%
+    P50 [ΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûæΓûæΓûæΓûæΓûæΓûæΓûæΓûæΓûæΓûæΓûæ] +16.4%
+    P75 [ΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûæΓûæΓûæΓûæΓûæΓûæΓûæ] +27.9%
+    P90 [ΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûæΓûæΓûæΓûæ] +38.9%
+    P95 [ΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûæΓûæ] +45.8%
+
+  ≡ƒÆ░ EXPECTED PORTFOLIO VALUE (Γé╣10L invested)
+    P 5: Γé╣     919,900 (-8.0%)
+    P25: Γé╣   1,059,600 (+6.0%)
+    P50: Γé╣   1,164,500 (+16.4%)
+    P75: Γé╣   1,279,200 (+27.9%)
+    P95: Γé╣   1,458,400 (+45.8%)
+======================================================================

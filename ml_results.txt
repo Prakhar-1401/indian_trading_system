@@ -1,0 +1,72 @@
+2026-06-20 23:17:42.752 | INFO     | src.strategy.ml_ensemble:train:225 - Training ML model for RELIANCE...
+2026-06-20 23:17:42.755 | DEBUG    | src.data.fetcher:get_historical_data:153 - Loading cached data for RELIANCE.NS
+2026-06-20 23:17:44.889 | INFO     | src.strategy.ml_ensemble:train:304 -   RELIANCE: RF acc=61.6%, GB acc=69.7%, features=49
+2026-06-20 23:17:44.890 | DEBUG    | src.data.fetcher:get_historical_data:153 - Loading cached data for RELIANCE.NS
+2026-06-20 23:17:45.029 | INFO     | src.strategy.ml_ensemble:train:225 - Training ML model for TCS...
+2026-06-20 23:17:45.030 | INFO     | src.data.fetcher:get_historical_data:157 - Downloading data for TCS.NS (5y, 1d)
+2026-06-20 23:17:48.601 | INFO     | src.strategy.ml_ensemble:train:304 -   TCS: RF acc=51.0%, GB acc=65.7%, features=49
+2026-06-20 23:17:48.602 | DEBUG    | src.data.fetcher:get_historical_data:153 - Loading cached data for TCS.NS
+2026-06-20 23:17:48.742 | INFO     | src.strategy.ml_ensemble:train:225 - Training ML model for HDFCBANK...
+2026-06-20 23:17:48.743 | INFO     | src.data.fetcher:get_historical_data:157 - Downloading data for HDFCBANK.NS (5y, 1d)
+2026-06-20 23:17:51.193 | INFO     | src.strategy.ml_ensemble:train:304 -   HDFCBANK: RF acc=61.6%, GB acc=71.2%, features=49
+2026-06-20 23:17:51.194 | DEBUG    | src.data.fetcher:get_historical_data:153 - Loading cached data for HDFCBANK.NS
+2026-06-20 23:17:51.326 | INFO     | src.strategy.ml_ensemble:train:225 - Training ML model for INFY...
+2026-06-20 23:17:51.327 | INFO     | src.data.fetcher:get_historical_data:157 - Downloading data for INFY.NS (5y, 1d)
+2026-06-20 23:17:53.541 | INFO     | src.strategy.ml_ensemble:train:304 -   INFY: RF acc=66.2%, GB acc=67.2%, features=49
+2026-06-20 23:17:53.542 | DEBUG    | src.data.fetcher:get_historical_data:153 - Loading cached data for INFY.NS
+2026-06-20 23:17:53.675 | INFO     | src.strategy.ml_ensemble:train:225 - Training ML model for SBIN...
+2026-06-20 23:17:53.676 | INFO     | src.data.fetcher:get_historical_data:157 - Downloading data for SBIN.NS (5y, 1d)
+2026-06-20 23:17:56.007 | INFO     | src.strategy.ml_ensemble:train:304 -   SBIN: RF acc=64.1%, GB acc=63.6%, features=49
+2026-06-20 23:17:56.007 | DEBUG    | src.data.fetcher:get_historical_data:153 - Loading cached data for SBIN.NS
+2026-06-20 23:17:56.160 | INFO     | src.strategy.ml_ensemble:train:225 - Training ML model for BHARTIARTL...
+2026-06-20 23:17:56.161 | INFO     | src.data.fetcher:get_historical_data:157 - Downloading data for BHARTIARTL.NS (5y, 1d)
+2026-06-20 23:17:58.460 | INFO     | src.strategy.ml_ensemble:train:304 -   BHARTIARTL: RF acc=66.7%, GB acc=60.1%, features=49
+2026-06-20 23:17:58.461 | DEBUG    | src.data.fetcher:get_historical_data:153 - Loading cached data for BHARTIARTL.NS
+2026-06-20 23:17:58.593 | INFO     | src.strategy.ml_ensemble:train:225 - Training ML model for SUNPHARMA...
+2026-06-20 23:17:58.593 | INFO     | src.data.fetcher:get_historical_data:157 - Downloading data for SUNPHARMA.NS (5y, 1d)
+2026-06-20 23:18:00.901 | INFO     | src.strategy.ml_ensemble:train:304 -   SUNPHARMA: RF acc=64.6%, GB acc=65.7%, features=49
+2026-06-20 23:18:00.902 | DEBUG    | src.data.fetcher:get_historical_data:153 - Loading cached data for SUNPHARMA.NS
+2026-06-20 23:18:01.040 | INFO     | src.strategy.ml_ensemble:train:225 - Training ML model for COALINDIA...
+2026-06-20 23:18:01.040 | INFO     | src.data.fetcher:get_historical_data:157 - Downloading data for COALINDIA.NS (5y, 1d)
+2026-06-20 23:18:03.310 | INFO     | src.strategy.ml_ensemble:train:304 -   COALINDIA: RF acc=58.1%, GB acc=57.1%, features=49
+2026-06-20 23:18:03.311 | DEBUG    | src.data.fetcher:get_historical_data:153 - Loading cached data for COALINDIA.NS
+2026-06-20 23:18:03.450 | INFO     | src.strategy.ml_ensemble:train:225 - Training ML model for NTPC...
+2026-06-20 23:18:03.450 | INFO     | src.data.fetcher:get_historical_data:157 - Downloading data for NTPC.NS (5y, 1d)
+2026-06-20 23:18:05.805 | INFO     | src.strategy.ml_ensemble:train:304 -   NTPC: RF acc=68.7%, GB acc=74.7%, features=49
+2026-06-20 23:18:05.806 | DEBUG    | src.data.fetcher:get_historical_data:153 - Loading cached data for NTPC.NS
+2026-06-20 23:18:05.942 | INFO     | src.strategy.ml_ensemble:train:225 - Training ML model for BAJFINANCE...
+2026-06-20 23:18:05.942 | INFO     | src.data.fetcher:get_historical_data:157 - Downloading data for BAJFINANCE.NS (5y, 1d)
+2026-06-20 23:18:08.200 | INFO     | src.strategy.ml_ensemble:train:304 -   BAJFINANCE: RF acc=68.7%, GB acc=68.7%, features=49
+2026-06-20 23:18:08.201 | DEBUG    | src.data.fetcher:get_historical_data:153 - Loading cached data for BAJFINANCE.NS
+
+======================================================================
+  ML ENSEMBLE MODEL ΓÇö SIGNAL PREDICTIONS
+======================================================================
+  Model: Random Forest + Gradient Boosting
+  Target: 2% return in 5 days
+  Confidence Threshold: BUY > 65%, SELL < 35%
+
+  Symbol       Action   Conf     RF     GB Agreement      Model Acc
+  ----------------------------------------------------------------------
+  TCS          ΓÜ¬HOLD  50.8% 68.3% 33.3% DISAGREE          51.0%
+  BAJFINANCE   ΓÜ¬HOLD  48.4% 44.7% 52.1% STRONG_AGREE      68.7%
+  INFY         ΓÜ¬HOLD  42.6% 42.7% 42.5% STRONG_AGREE      66.2%
+  COALINDIA    ΓÜ¬HOLD  39.5% 47.1% 31.9% AGREE             58.1%
+  SBIN         ΓÜ¬HOLD  38.3% 49.0% 27.5% DISAGREE          64.1%
+  NTPC         ≡ƒö┤SELL  29.7% 31.7% 27.8% STRONG_AGREE      68.7%
+  SUNPHARMA    ≡ƒö┤SELL  29.1% 40.3% 18.0% DISAGREE          64.6%
+  BHARTIARTL   ≡ƒö┤SELL  29.0% 37.3% 20.7% AGREE             66.7%
+  HDFCBANK     ≡ƒö┤SELL  26.0% 50.4%  1.6% DISAGREE          61.6%
+  RELIANCE     ≡ƒö┤SELL  25.3% 43.4%  7.3% DISAGREE          61.6%
+  ≡ƒôë ML says SELL: NTPC, SUNPHARMA, BHARTIARTL, HDFCBANK, RELIANCE
+
+  Top Features (driving TCS prediction):
+    macd                      0.061 ΓûêΓûêΓûêΓûêΓûêΓûê
+    price_vs_sma10            0.043 ΓûêΓûêΓûêΓûê
+    ma_20_200_dist            0.038 ΓûêΓûêΓûê
+    zscore_50                 0.035 ΓûêΓûêΓûê
+    macd_signal               0.033 ΓûêΓûêΓûê
+
+  NOTE: ML signals should CONFIRM other indicators, not replace them.
+  High confidence + agreement = strongest signal.
+======================================================================

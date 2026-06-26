@@ -1,0 +1,109 @@
+# ============================================================
+# STRATEGY CONFIGURATION
+# ============================================================
+# This file controls ALL strategy parameters.
+# Tweak these during backtesting to find optimal values.
+# ============================================================
+
+universe:
+  # Which stocks to consider
+  index: "NIFTY 500"
+  min_market_cap_cr: 500        # Minimum market cap in Crores
+  max_debt_equity: 1.5          # Maximum debt-to-equity ratio
+  min_avg_volume: 100000        # Minimum average daily volume (shares)
+  exclude_sectors: []            # e.g., ["Real Estate", "Metals"]
+
+# --- FACTOR WEIGHTS (must sum to 1.0) ---
+# This is the CORE of the strategy. Adjust based on backtesting.
+#
+# HOW TO THINK ABOUT WEIGHTS:
+# - In trending/bull markets: increase momentum weight
+# - In volatile/uncertain markets: increase quality + sentiment
+# - When news is driving markets: increase sentiment
+# - When institutions are active: increase smart_money
+factor_weights:
+  momentum: 0.40       # Price trend strength (RSI, MACD, moving averages)
+  quality: 0.25        # Company fundamentals (ROE, profit growth, debt)
+  sentiment: 0.20      # News + social sentiment score
+  smart_money: 0.15    # Insider/FII/politician trade signals
+
+# --- MOMENTUM INDICATORS ---
+momentum:
+  rsi_period: 14
+  rsi_oversold: 30          # Below this = oversold (potential buy)
+  rsi_overbought: 70        # Above this = overbought (potential sell)
+  macd_fast: 12
+  macd_slow: 26
+  macd_signal: 9
+  sma_short: 50             # Short-term moving average
+  sma_long: 200             # Long-term moving average (golden/death cross)
+  ema_period: 21
+  # Momentum score logic:
+  # - Price above 200 DMA: +2 points
+  # - Price above 50 DMA: +1 point
+  # - RSI between 40-65 (healthy uptrend): +2 points
+  # - MACD above signal line: +1 point
+  # - 3-month return > 10%: +2 points
+
+# --- QUALITY INDICATORS ---
+quality:
+  min_roe: 12.0              # Return on Equity (%)
+  min_profit_growth_3yr: 10  # 3-year profit CAGR (%)
+  max_pe_ratio: 40           # Price-to-Earnings cap
+  min_promoter_holding: 35   # Minimum promoter holding (%)
+  # Quality score logic:
+  # - ROE > 15%: +2 points
+  # - Debt/Equity < 0.5: +2 points
+  # - 3yr profit growth > 15%: +2 points
+  # - Promoter holding > 50%: +1 point
+  # - Consistent dividend payer: +1 point
+
+# --- SENTIMENT SCORING ---
+sentiment:
+  news_sources:
+    - "https://economictimes.indiatimes.com/markets/rss"
+    - "https://www.moneycontrol.com/rss/latestnews.xml"
+    - "https://www.livemint.com/rss/markets"
+  lookback_days: 7           # How many days of news to consider
+  min_articles: 3            # Minimum articles needed for reliable score
+  positive_threshold: 0.2    # VADER compound score threshold
+  negative_threshold: -0.2
+  # Sentiment score logic:
+  # - Strong positive sentiment (>0.5): +3 points
+  # - Mild positive (0.2 to 0.5): +1 point
+  # - Neutral: 0 points
+  # - Negative (<-0.2): -2 points
+
+# --- SMART MONEY TRACKING ---
+smart_money:
+  track_fii_dii: true         # FII/DII daily buy/sell data
+  track_bulk_deals: true      # NSE/BSE bulk & block deals
+  track_insider_trades: true  # SEBI insider trading disclosures
+  track_politician_trades: true # US Congress trades (as reference)
+  fii_buy_weight: 2           # How much weight to give FII buying
+  insider_buy_weight: 3       # Insider buying is strongest signal
+
+# --- PORTFOLIO CONSTRUCTION ---
+portfolio:
+  max_stocks: 15              # Maximum stocks to hold
+  max_position_pct: 7.0       # Max % of portfolio in one stock
+  min_position_pct: 3.0       # Min % to make it meaningful
+  rebalance_frequency: "weekly"
+  rebalance_day: "Monday"
+  cash_reserve_pct: 5.0       # Always keep 5% in cash
+
+# --- RISK MANAGEMENT ---
+risk:
+  stop_loss_pct: 8.0          # Sell if stock drops 8% from entry
+  trailing_stop_pct: 12.0     # Trailing stop at 12% from peak
+  max_sector_exposure: 25.0   # Max 25% in any one sector
+  max_drawdown_exit: 15.0     # Exit all if portfolio drops 15%
+
+# --- BACKTESTING ---
+backtest:
+  start_date: "2024-06-01"
+  end_date: "2026-06-01"
+  initial_capital: 1000000    # 10 Lakh INR
+  commission_pct: 0.05        # Brokerage (ICICI Direct ~0.05%)
+  slippage_pct: 0.1           # Estimated slippage
+  benchmark: "^NSEI"          # Nifty 50 as benchmark

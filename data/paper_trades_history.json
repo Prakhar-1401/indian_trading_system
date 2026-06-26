@@ -1,0 +1,95 @@
+{
+  "trades": [
+    {
+      "symbol": "COALINDIA",
+      "side": "SELL",
+      "qty": 208,
+      "entry_price": 479.95,
+      "exit_price": 481.6499938964844,
+      "pnl": 303.51,
+      "pnl_pct": 0.35,
+      "entry_date": "2026-05-04",
+      "exit_date": "2026-06-04T17:55:57.296083",
+      "hold_days": 31,
+      "commission": 50.09159936523437
+    },
+    {
+      "symbol": "SBIN",
+      "side": "SELL",
+      "qty": 84,
+      "entry_price": 1068.4,
+      "exit_price": 1015.2999877929688,
+      "pnl": -4503.04,
+      "pnl_pct": -4.97,
+      "entry_date": "2026-05-04",
+      "exit_date": "2026-06-16T17:02:41.028234",
+      "hold_days": 43,
+      "commission": 42.642599487304686
+    },
+    {
+      "symbol": "COALINDIA",
+      "side": "SELL",
+      "qty": 10,
+      "entry_price": 474.04998779296875,
+      "exit_price": 450.95001220703125,
+      "pnl": -233.25,
+      "pnl_pct": -4.87,
+      "entry_date": "2026-06-05T12:24:46.893106",
+      "exit_date": "2026-06-16T17:02:45.287839",
+      "hold_days": 11,
+      "commission": 4.625
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "side": "SELL",
+      "qty": 84,
+      "entry_price": 958.6,
+      "exit_price": 959.6500244140625,
+      "pnl": 47.9,
+      "pnl_pct": 0.11,
+      "entry_date": "2026-05-04",
+      "exit_date": "2026-06-16T18:30:27.706176",
+      "hold_days": 43,
+      "commission": 40.30530102539063
+    },
+    {
+      "symbol": "COALINDIA",
+      "side": "SELL",
+      "qty": 10,
+      "entry_price": 474.3500061035156,
+      "exit_price": 450.95001220703125,
+      "pnl": -236.25,
+      "pnl_pct": -4.93,
+      "entry_date": "2026-06-05T12:24:53.820135",
+      "exit_date": "2026-06-16T18:37:17.200428",
+      "hold_days": 11,
+      "commission": 4.626500091552735
+    },
+    {
+      "symbol": "COALINDIA",
+      "side": "SELL",
+      "qty": 10,
+      "entry_price": 450.95001220703125,
+      "exit_price": 450.95001220703125,
+      "pnl": -2.25,
+      "pnl_pct": 0.0,
+      "entry_date": "2026-06-16T18:22:19.722783",
+      "exit_date": "2026-06-16T18:38:00.679912",
+      "hold_days": 0,
+      "commission": 4.509500122070313
+    },
+    {
+      "symbol": "RELIANCE",
+      "side": "SELL",
+      "qty": 10,
+      "entry_price": 1328.800048828125,
+      "exit_price": 1328.800048828125,
+      "pnl": -6.64,
+      "pnl_pct": 0.0,
+      "entry_date": "2026-06-16T18:38:37.828236",
+      "exit_date": "2026-06-16T18:38:48.724959",
+      "hold_days": 0,
+      "commission": 13.28800048828125
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+# Data & API
+yfinance==0.2.36
+breeze-connect==1.0.50
+pandas==2.2.1
+numpy==1.26.4
+requests==2.31.0
+curl_cffi==0.7.1
+
+# Technical Analysis
+ta==0.11.0
+pandas-ta==0.3.14b1
+
+# Sentiment / NLP
+beautifulsoup4==4.12.3
+newspaper3k==0.2.8
+textblob==0.18.0
+vaderSentiment==3.3.2
+feedparser==6.0.11
+
+# Backtesting
+backtrader==1.9.78.123
+vectorbt==0.26.2
+quantstats==0.0.62
+
+# Dashboard
+streamlit==1.32.2
+plotly==5.19.0
+
+# Scheduling & Deployment
+schedule==1.2.1
+python-dotenv==1.0.1
+loguru==0.7.2
+
+# Database
+sqlalchemy==2.0.28
+sqlite3-api==2.0.4

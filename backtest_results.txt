@@ -1,0 +1,75 @@
+2026-06-20 23:13:05.039 | INFO     | src.backtest.engine:run:128 - Starting backtest: 2024-06-01 to 2026-06-01
+2026-06-20 23:13:05.041 | INFO     | src.backtest.engine:run:129 - Capital: Γé╣1,000,000, Stocks: 40
+2026-06-20 23:13:05.041 | INFO     | src.backtest.engine:run:132 - Downloading historical data...
+2026-06-20 23:13:05.042 | INFO     | src.data.fetcher:get_historical_data:157 - Downloading data for RELIANCE.NS (2y, 1d)
+2026-06-20 23:13:12.169 | INFO     | src.data.fetcher:get_historical_data:157 - Downloading data for TCS.NS (2y, 1d)
+2026-06-20 23:13:12.537 | INFO     | src.data.fetcher:get_historical_data:157 - Downloading data for HDFCBANK.NS (2y, 1d)
+2026-06-20 23:13:12.841 | INFO     | src.data.fetcher:get_historical_data:157 - Downloading data for INFY.NS (2y, 1d)
+2026-06-20 23:13:13.188 | INFO     | src.data.fetcher:get_historical_data:157 - Downloading data for ICICIBANK.NS (2y, 1d)
+2026-06-20 23:13:13.911 | INFO     | src.data.fetcher:get_historical_data:157 - Downloading data for HINDUNILVR.NS (2y, 1d)
+2026-06-20 23:13:14.252 | INFO     | src.data.fetcher:get_historical_data:157 - Downloading data for SBIN.NS (2y, 1d)
+2026-06-20 23:13:14.566 | INFO     | src.data.fetcher:get_historical_data:157 - Downloading data for BHARTIARTL.NS (2y, 1d)
+2026-06-20 23:13:14.812 | INFO     | src.data.fetcher:get_historical_data:157 - Downloading data for ITC.NS (2y, 1d)
+2026-06-20 23:13:15.072 | INFO     | src.data.fetcher:get_historical_data:157 - Downloading data for KOTAKBANK.NS (2y, 1d)
+2026-06-20 23:13:15.442 | INFO     | src.data.fetcher:get_historical_data:157 - Downloading data for LT.NS (2y, 1d)
+2026-06-20 23:13:15.764 | INFO     | src.data.fetcher:get_historical_data:157 - Downloading data for AXISBANK.NS (2y, 1d)
+2026-06-20 23:13:16.025 | INFO     | src.data.fetcher:get_historical_data:157 - Downloading data for ASIANPAINT.NS (2y, 1d)
+2026-06-20 23:13:16.284 | INFO     | src.data.fetcher:get_historical_data:157 - Downloading data for MARUTI.NS (2y, 1d)
+2026-06-20 23:13:16.540 | INFO     | src.data.fetcher:get_historical_data:157 - Downloading data for HCLTECH.NS (2y, 1d)
+2026-06-20 23:13:17.134 | INFO     | src.data.fetcher:get_historical_data:157 - Downloading data for SUNPHARMA.NS (2y, 1d)
+2026-06-20 23:13:17.437 | INFO     | src.data.fetcher:get_historical_data:157 - Downloading data for TITAN.NS (2y, 1d)
+2026-06-20 23:13:17.865 | INFO     | src.data.fetcher:get_historical_data:157 - Downloading data for BAJFINANCE.NS (2y, 1d)
+2026-06-20 23:13:18.125 | INFO     | src.data.fetcher:get_historical_data:157 - Downloading data for WIPRO.NS (2y, 1d)
+2026-06-20 23:13:18.554 | INFO     | src.data.fetcher:get_historical_data:157 - Downloading data for ULTRACEMCO.NS (2y, 1d)
+2026-06-20 23:13:18.910 | INFO     | src.data.fetcher:get_historical_data:157 - Downloading data for NESTLEIND.NS (2y, 1d)
+2026-06-20 23:13:19.160 | INFO     | src.data.fetcher:get_historical_data:157 - Downloading data for TECHM.NS (2y, 1d)
+2026-06-20 23:13:19.402 | INFO     | src.data.fetcher:get_historical_data:157 - Downloading data for POWERGRID.NS (2y, 1d)
+2026-06-20 23:13:19.657 | INFO     | src.data.fetcher:get_historical_data:157 - Downloading data for NTPC.NS (2y, 1d)
+2026-06-20 23:13:19.920 | INFO     | src.data.fetcher:get_historical_data:157 - Downloading data for TATAMOTORS.NS (2y, 1d)
+HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: TATAMOTORS.NS"}}}
+$TATAMOTORS.NS: possibly delisted; no timezone found
+2026-06-20 23:13:21.507 | WARNING  | src.data.fetcher:get_historical_data:166 - No data returned for TATAMOTORS.NS
+2026-06-20 23:13:21.508 | INFO     | src.data.fetcher:get_historical_data:157 - Downloading data for ONGC.NS (2y, 1d)
+2026-06-20 23:13:21.879 | INFO     | src.data.fetcher:get_historical_data:157 - Downloading data for JSWSTEEL.NS (2y, 1d)
+2026-06-20 23:13:22.126 | INFO     | src.data.fetcher:get_historical_data:157 - Downloading data for TATASTEEL.NS (2y, 1d)
+2026-06-20 23:13:22.428 | INFO     | src.data.fetcher:get_historical_data:157 - Downloading data for COALINDIA.NS (2y, 1d)
+2026-06-20 23:13:22.675 | INFO     | src.data.fetcher:get_historical_data:157 - Downloading data for CIPLA.NS (2y, 1d)
+2026-06-20 23:13:23.015 | INFO     | src.data.fetcher:get_historical_data:157 - Downloading data for DRREDDY.NS (2y, 1d)
+2026-06-20 23:13:23.277 | INFO     | src.data.fetcher:get_historical_data:157 - Downloading data for EICHERMOT.NS (2y, 1d)
+2026-06-20 23:13:23.535 | INFO     | src.data.fetcher:get_historical_data:157 - Downloading data for HEROMOTOCO.NS (2y, 1d)
+2026-06-20 23:13:23.863 | INFO     | src.data.fetcher:get_historical_data:157 - Downloading data for BRITANNIA.NS (2y, 1d)
+2026-06-20 23:13:24.138 | INFO     | src.data.fetcher:get_historical_data:157 - Downloading data for HINDALCO.NS (2y, 1d)
+2026-06-20 23:13:24.857 | INFO     | src.data.fetcher:get_historical_data:157 - Downloading data for APOLLOHOSP.NS (2y, 1d)
+2026-06-20 23:13:25.151 | INFO     | src.data.fetcher:get_historical_data:157 - Downloading data for TATACONSUM.NS (2y, 1d)
+2026-06-20 23:13:25.456 | INFO     | src.data.fetcher:get_historical_data:157 - Downloading data for DABUR.NS (2y, 1d)
+2026-06-20 23:13:25.758 | INFO     | src.data.fetcher:get_historical_data:157 - Downloading data for PIDILITIND.NS (2y, 1d)
+2026-06-20 23:13:26.051 | INFO     | src.data.fetcher:get_historical_data:157 - Downloading data for HAVELLS.NS (2y, 1d)
+2026-06-20 23:13:26.717 | INFO     | src.backtest.engine:run:144 - Got data for 39/40 stocks
+2026-06-20 23:13:26.717 | INFO     | src.backtest.engine:run:152 - Pre-computing momentum scores (vectorized)...
+2026-06-20 23:13:27.072 | INFO     | src.backtest.engine:run:202 - Momentum scores pre-computed. Starting simulation...
+
+≡ƒöä Running Backtest...
+
+============================================================
+         BACKTEST RESULTS
+============================================================
+  Initial Capital:  Γé╣     998,598
+  Final Value:      Γé╣     980,481
+  Total Return:             -1.8%
+  CAGR:                     -0.9%
+  Sharpe Ratio:            -0.01
+  Max Drawdown:            -13.6%
+------------------------------------------------------------
+  Total Trades:              628
+  Win Rate:                 43.5%
+  Profit Factor:            0.99
+  Avg Win:                  4.28%
+  Avg Loss:                -3.20%
+  Gross Profit:     Γé╣     740,385
+  Gross Loss:       Γé╣     749,459
+============================================================
+
+≡ƒôè INTERPRETATION:
+  ΓÜá∩╕Å  Poor risk-adjusted returns (Sharpe < 1)
+  Γ£à Acceptable drawdown (< 15%)
+  Γä╣∩╕Å  Win rate < 55% ΓÇö OK if avg win >> avg loss
