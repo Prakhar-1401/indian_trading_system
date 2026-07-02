@@ -9,3 +9,5 @@ logs/*.log
 venv/
 dist/
 *.egg-info/
+.ipynb_checkpoints/
+.pytest_cache/

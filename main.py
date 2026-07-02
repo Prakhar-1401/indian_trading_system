@@ -24,6 +24,9 @@ USAGE:
     python main.py sectors       # Sector heatmap & correlation
     python main.py full          # Run EVERYTHING (daily report)
     python main.py decide        # Decision engine (TAKE/WATCH/SKIP)
+    python main.py statval       # Statistical validation (IC, Fama-MacBeth, t-stats)
+    python main.py optimize hrp  # Portfolio optimization (max_sharpe/min_variance/risk_parity/hrp/black_litterman)
+    python main.py impact        # Market impact + Almgren-Chriss execution
     python main.py dashboard     # Launch Streamlit dashboard
     python main.py terminal      # Launch Bloomberg-style terminal
 """
@@ -369,6 +372,49 @@ def cmd_decide():
     engine.print_report(decisions)
 
 
+def cmd_statval():
+    """Statistical validation: IC, Fama-MacBeth, Newey-West t-stats, FDR, bootstrap Sharpe."""
+    from src.research.statistical_validation import StatisticalValidator
+
+    print("\n🔬 Running Statistical Validation (this downloads a universe, give it a minute)...")
+    validator = StatisticalValidator()
+    report = validator.run()
+    validator.print_report(report)
+
+
+def cmd_optimize():
+    """Portfolio optimization: max_sharpe / min_variance / risk_parity / hrp / black_litterman."""
+    from src.portfolio.optimizer import PortfolioOptimizer
+
+    method = sys.argv[2].lower() if len(sys.argv) >= 3 else "hrp"
+    symbols = ["RELIANCE", "TCS", "HDFCBANK", "SBIN", "BHARTIARTL",
+               "SUNPHARMA", "COALINDIA", "NTPC", "BAJFINANCE", "ITC"]
+
+    print(f"\n📐 Optimizing portfolio with method='{method}'...")
+    opt = PortfolioOptimizer().load(symbols)
+    if method in ("all", "compare"):
+        for m in ["max_sharpe", "min_variance", "risk_parity", "hrp", "black_litterman"]:
+            opt.print_report(opt.optimize(m))
+    else:
+        opt.print_report(opt.optimize(method))
+
+
+def cmd_impact():
+    """Market impact (square-root model) + Almgren-Chriss optimal execution."""
+    from src.execution.market_impact import ExecutionAnalyzer
+
+    symbol = sys.argv[2].upper() if len(sys.argv) >= 3 else "RELIANCE"
+    order_value = float(sys.argv[3]) if len(sys.argv) >= 4 else 10_000_000
+
+    print(f"\n💧 Estimating execution cost for {symbol} (Rs {order_value:,.0f})...")
+    ex = ExecutionAnalyzer()
+    est = ex.estimate_impact(symbol, order_value=order_value)
+    ex.print_impact(est)
+    if est.order_shares > 0:
+        ac = ex.almgren_chriss(symbol, total_shares=est.order_shares, n_slices=10)
+        ex.print_almgren(ac)
+
+
 def main():
     if len(sys.argv) < 2:
         print(__doc__)
@@ -398,6 +444,9 @@ def main():
         "sectors": cmd_sectors,
         "full": cmd_full,
         "decide": cmd_decide,
+        "statval": cmd_statval,
+        "optimize": cmd_optimize,
+        "impact": cmd_impact,
         "dashboard": cmd_dashboard,
         "terminal": cmd_terminal,
     }

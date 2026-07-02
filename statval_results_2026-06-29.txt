@@ -1,0 +1,2 @@
+Unknown command: statval
+Available commands: rank, signals, backtest, sentiment, pairs, geo, insider, risk, telegram, ml, regime, options, events, kelly, premarket, paper, montecarlo, wfo, factors, sectors, full, decide, dashboard, terminal

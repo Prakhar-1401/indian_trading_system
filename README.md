@@ -6,7 +6,11 @@ A modular, research-first algorithmic trading system for Indian equities (NSE) t
 - Kelly-criterion position sizing
 - market regime and event filters
 - backtesting + walk-forward validation + Monte Carlo stress testing
+- **statistical signal validation** (Information Coefficient, Fama-MacBeth, Newey-West t-stats, FDR correction, bootstrap Sharpe CIs)
+- **portfolio construction** (Mean-Variance, Risk Parity, Hierarchical Risk Parity, Black-Litterman)
+- **transaction-cost modelling** (square-root market impact, implementation shortfall, Almgren-Chriss execution)
 - live paper trading workflow
+- unit tests + CI (pytest + GitHub Actions) and a reproducible research note (Jupyter + LaTeX)
 
 This repository is designed to be honest about what is validated, what is exploratory, and how results were produced.
 
@@ -95,6 +99,28 @@ Verdict:
 - integrated trading terminal
 - ranking, analysis, paper trading, performance views
 
+### Statistical validation (`src/research/statistical_validation.py`)
+- Information Coefficient (IC) and IC-IR per signal/horizon
+- Newey-West (HAC) adjusted t-statistics on the IC time series
+- Benjamini-Hochberg false-discovery-rate correction across all tests
+- Fama-MacBeth cross-sectional regression for factor premia
+- turnover-adjusted (net-of-cost) Sharpe with a bootstrap confidence interval
+
+### Portfolio construction (`src/portfolio/optimizer.py`)
+- Mean-Variance (max-Sharpe and min-variance)
+- Risk Parity (equal risk contribution)
+- Hierarchical Risk Parity (HRP, Lopez de Prado)
+- Black-Litterman (equilibrium prior + views)
+
+### Execution quality (`src/execution/market_impact.py`)
+- square-root market-impact model: `impact = c * sigma * sqrt(Q/ADV)`
+- implementation shortfall (Perold) decomposition
+- Almgren-Chriss optimal execution trajectory
+
+### Research note (`notebooks/research_note.ipynb`)
+- reproducible 2-page quant research note with LaTeX, tables, and charts
+- ties the statistical results, portfolio construction, and cost model together
+
 ## 4) Validation methodology (how real traders validate)
 
 The project follows a 4-layer validation stack:
@@ -157,6 +183,23 @@ Interpretation:
 - favorable expected distribution under model assumptions
 - still requires robust OOS verification due to WFO degradation warning
 
+### E) Statistical signal validation (20 large-caps, 2022-2026)
+Source: `python main.py statval`
+
+Of 20 (signal, horizon) hypotheses tested, only **one survives** Newey-West +
+Benjamini-Hochberg correction:
+
+- `zscore_20 @ 1-day`: mean IC -0.0266, Newey-West t = -3.24, adjusted p = 0.024 (significant)
+- a short-horizon **mean-reversion** effect; trend/momentum signals were not significant
+
+Turnover-adjusted momentum long/short:
+- Gross Sharpe -0.05, **Net Sharpe -1.21** (95% bootstrap CI [-2.17, -0.18])
+- Annual net return -17.3% at ~165x annual turnover
+
+Interpretation:
+- disciplined result: most apparent edges are noise after correcting for multiple testing
+- a naive momentum long/short does not survive realistic transaction costs
+
 ## 6) Important engineering correction made
 
 A validation-critical bug was fixed:
@@ -201,7 +244,15 @@ python main.py backtest
 python main.py wfo
 python main.py ml
 python main.py montecarlo
+python main.py statval            # statistical signal validation (IC, Fama-MacBeth, t-stats)
+python main.py optimize hrp       # portfolio optimization (max_sharpe/min_variance/risk_parity/hrp/black_litterman)
+python main.py impact RELIANCE 10000000   # market impact + Almgren-Chriss execution
 python main.py terminal
+```
+
+## Run tests
+```bash
+pytest -q
 ```
 
 ## Run dashboard terminal
@@ -263,17 +314,25 @@ High-impact next steps:
 
 ```text
 config/
+notebooks/
+  research_note.ipynb
 src/
   backtest/
   data/
   dashboard/
+  execution/
   indicators/
+  portfolio/
   ranking/
+  research/
   sentiment/
   smart_money/
   strategy/
   utils/
+tests/
+.github/workflows/ci.yml
 main.py
+pytest.ini
 requirements.txt
 ```
 
