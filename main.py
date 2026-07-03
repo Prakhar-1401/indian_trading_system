@@ -424,6 +424,32 @@ def cmd_signalstudy():
     study.print_leaderboard(study.run())
 
 
+def cmd_reversion():
+    """Turnover study: can the mean-reversion edge survive costs after reducing turnover?"""
+    from src.research.reversion_study import ReversionStudy
+
+    print("\n\U0001F501 Running Reversion Turnover Study (rebalance x quantile sweep)...")
+    study = ReversionStudy()
+    _, configs, _ = study.run()
+    study.print_report(configs)
+
+
+def cmd_benchmark():
+    """Alpha/beta of the best reversion strategy vs the Nifty 50 (^NSEI)."""
+    from src.research.reversion_study import ReversionStudy
+    from src.research.benchmark import BenchmarkAnalyzer
+
+    print("\n\U0001F4C8 Building best reversion strategy, then measuring alpha vs Nifty 50...")
+    study = ReversionStudy()
+    best, _, returns = study.run()
+    if best is None or returns is None:
+        print("No tradeable configuration produced returns to benchmark.")
+        return
+    print(f"  Best config: {best.signal}, rebalance {best.rebalance_days}d, "
+          f"top/bottom {best.quantile:.0%} (net Sharpe {best.net_sharpe:.2f})")
+    BenchmarkAnalyzer().print_report(BenchmarkAnalyzer().analyze(returns))
+
+
 def main():
     if len(sys.argv) < 2:
         print(__doc__)
@@ -455,6 +481,8 @@ def main():
         "decide": cmd_decide,
         "statval": cmd_statval,
         "signalstudy": cmd_signalstudy,
+        "reversion": cmd_reversion,
+        "benchmark": cmd_benchmark,
         "optimize": cmd_optimize,
         "impact": cmd_impact,
         "dashboard": cmd_dashboard,

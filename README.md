@@ -106,6 +106,21 @@ Verdict:
 - Fama-MacBeth cross-sectional regression for factor premia
 - turnover-adjusted (net-of-cost) Sharpe with a bootstrap confidence interval
 
+### Signal research study (`src/research/signal_study.py`)
+- library of 16 documented anomaly signals (momentum, reversal, low-vol, liquidity, lottery/skew)
+- Information Coefficient + IC-IR + Newey-West t-stat per signal
+- Benjamini-Hochberg FDR across the whole (signal x horizon) grid (anti data-mining)
+- net-of-cost long/short Sharpe with bootstrap CI, ranked into a leaderboard
+
+### Reversion turnover study (`src/research/reversion_study.py`)
+- takes the FDR-significant mean-reversion signals and sweeps rebalance frequency x quantile
+- reports net-of-cost Sharpe + bootstrap CI for each configuration
+- turnover engineering (not lookback tuning) to test whether the edge can clear the cost hurdle
+
+### Benchmark analysis (`src/research/benchmark.py`)
+- regresses strategy returns on the Nifty 50 (`^NSEI`): `r = alpha + beta * r_mkt`
+- annualized alpha with Newey-West t-stat, beta, R-squared, information ratio
+
 ### Portfolio construction (`src/portfolio/optimizer.py`)
 - Mean-Variance (max-Sharpe and min-variance)
 - Risk Parity (equal risk contribution)
@@ -200,6 +215,31 @@ Interpretation:
 - disciplined result: most apparent edges are noise after correcting for multiple testing
 - a naive momentum long/short does not survive realistic transaction costs
 
+### F) Signal research leaderboard (50 large/mid-caps, 2021-2026)
+Source: `python main.py signalstudy`
+
+Screening 16 anomaly signals x 4 horizons (FDR-corrected across the full grid):
+- **8/16 signals** have statistically real IC after Newey-West + Benjamini-Hochberg
+- every momentum signal has *negative* IC: in this universe/period the effect is **mean-reversion**, not trend
+- only **2/16** have a positive net-of-cost long/short Sharpe (`mom_60`, `dist_52w`)
+- best daily book (`mom_60`, dir -1): net Sharpe 0.62, 95% CI [-0.35, 1.52] (includes zero)
+
+### G) Reversion turnover study
+Source: `python main.py reversion`
+
+Sweeping rebalance frequency x selection quantile on the reversion signals:
+- turnover reduction lifts the best net Sharpe from 0.62 -> **0.92** (`dist_52w`, 5-day rebalance, top/bottom 10%)
+- net return rises to **18.7%/yr** at 79x turnover, but the 95% CI [-0.10, 1.98] still marginally includes zero
+- honest read: a genuine, near-tradeable reversion edge whose robustness is right at the cost boundary
+
+### H) Alpha vs Nifty 50
+Source: `python main.py benchmark`
+
+Regressing the best reversion book on the Nifty 50 (977 trading days):
+- **beta 0.10** (effectively market-neutral), R-squared 0.5%
+- **alpha 11.6%/yr**, Newey-West t = 1.18, p = 0.24 (positive but not significant at 5%)
+- verdict: uncorrelated to the market with promising raw alpha, but not yet distinguishable from luck
+
 ## 6) Important engineering correction made
 
 A validation-critical bug was fixed:
@@ -245,6 +285,9 @@ python main.py wfo
 python main.py ml
 python main.py montecarlo
 python main.py statval            # statistical signal validation (IC, Fama-MacBeth, t-stats)
+python main.py signalstudy        # screen 16 anomaly signals, net-of-cost leaderboard
+python main.py reversion          # turnover sweep on the mean-reversion signals
+python main.py benchmark          # alpha/beta of the best reversion book vs Nifty 50
 python main.py optimize hrp       # portfolio optimization (max_sharpe/min_variance/risk_parity/hrp/black_litterman)
 python main.py impact RELIANCE 10000000   # market impact + Almgren-Chriss execution
 python main.py terminal
