@@ -415,6 +415,15 @@ def cmd_impact():
         ex.print_almgren(ac)
 
 
+def cmd_signalstudy():
+    """Screen a library of anomaly signals across a broad universe; rank by net-of-cost Sharpe."""
+    from src.research.signal_study import SignalStudy
+
+    print("\n\U0001F52C Running Signal Research Study (downloads ~50 names, give it a minute)...")
+    study = SignalStudy()
+    study.print_leaderboard(study.run())
+
+
 def main():
     if len(sys.argv) < 2:
         print(__doc__)
@@ -445,6 +454,7 @@ def main():
         "full": cmd_full,
         "decide": cmd_decide,
         "statval": cmd_statval,
+        "signalstudy": cmd_signalstudy,
         "optimize": cmd_optimize,
         "impact": cmd_impact,
         "dashboard": cmd_dashboard,
